@@ -38,8 +38,8 @@ var myReducer = (state = initialState,action)=>{
             var id = action.id;
             var index = findIndex(state,id);
             // state[index].status = !state[index].status
-            var cloneTask = {...state[index]}
-            cloneTask.status  = !cloneTask.status;
+            // var cloneTask = {...state[index]}
+            // cloneTask.status  = !cloneTask.status;
             //cach 1
             // state.splice(index,1);
             // state.push(cloneTask)
@@ -51,6 +51,14 @@ var myReducer = (state = initialState,action)=>{
                 status:!state[index].status
             }
             localStorage.setItem('tasks', JSON.stringify(state));
+            return [...state]
+        case types.DELETE_ITEM:
+            var id = action.id;
+            var index = findIndex(state,id);
+            console.log(action)
+            console.log("index: ",index)
+            state.splice(index,1)
+            // state.push(task)
             return [...state]
         default: return state;
     }

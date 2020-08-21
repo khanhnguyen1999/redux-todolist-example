@@ -31,3 +31,15 @@ export const updateStatus = (id)=>{
         id
     }
 }
+export const deleteItem = (id)=>{
+    return {
+        type:types.DELETE_ITEM,
+        id
+    }
+}
+export const onSearch = (keyword)=>{
+    return {
+        type:types.SEARCH_VALUE,
+        keyword
+    }
+}
