@@ -32,9 +32,9 @@ class TaskList extends Component {
         // filter on table
         // search
         console.log("keyword: ",keyword)
-        // tasks = tasks.filter((task) => {
-        //     return task.name.toLowerCase().indexOf(keyword.toLowerCase()) !== -1;
-        // });
+        tasks = tasks.filter((task) => {
+            return task.name.toLowerCase().indexOf(keyword.toLowerCase()) !== -1;
+        });
 
         // sort
         // if(sort.by === 'name'){
@@ -112,7 +112,7 @@ const mapStateToProps = state => {
     return {
         tasks : state.tasks,
         filterTable : state.filterTable,
-        keyword : state.keyword,
+        keyword : state.valueKeyword,
     }
 };
 

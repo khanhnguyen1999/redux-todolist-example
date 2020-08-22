@@ -1,10 +1,10 @@
 import {combineReducers} from 'redux';
 import tasks from './tasks';
 import isDisplayForm from './isDisplayForm'
-import onSearch from './valueKeyword'
+import valueKeyword from './valueKeyword'
 const myReducer = combineReducers({
     tasks,
     isDisplayForm,
-    onSearch
+    valueKeyword
 })
 export default myReducer

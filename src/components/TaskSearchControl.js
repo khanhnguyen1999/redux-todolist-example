@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from './../actions/index'
 
-
 class TaskSearchControl extends Component {
 
     constructor(props) {
@@ -17,7 +16,7 @@ class TaskSearchControl extends Component {
             keyword : event.target.value
         });
     }
-
+    
     onSearch = () => {
         this.props.onSearch(this.state.keyword); // dispatch searchTask
     }
@@ -52,7 +51,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = (dispatch, props) => {
     return {
         onSearch : (keyword) => {
-            dispatch(actions.onSearch(keyword));
+            dispatch(actions.valueKeyword(keyword));
         }
     };
 };

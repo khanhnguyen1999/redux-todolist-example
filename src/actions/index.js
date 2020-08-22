@@ -37,7 +37,7 @@ export const deleteItem = (id)=>{
         id
     }
 }
-export const onSearch = (keyword)=>{
+export const valueKeyword = (keyword)=>{
     return {
         type:types.SEARCH_VALUE,
         keyword
