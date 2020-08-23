@@ -43,3 +43,15 @@ export const valueKeyword = (keyword)=>{
         keyword
     }
 }
+export const openSelectedItem = (id)=>{
+    return {
+        type:types.SELECTED_ITEM,
+        id
+    }
+}
+export const editTask = (task)=>{
+    return {
+        type:types.EDIT_ITEM,
+        task
+    }
+}

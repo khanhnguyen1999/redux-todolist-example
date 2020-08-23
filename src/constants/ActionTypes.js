@@ -6,3 +6,5 @@ export const OPEN_FORM='OPEN_FORM';
 export const UPDATE_STATUS='UPDATE_STATUS';
 export const DELETE_ITEM='DELETE_ITEM';
 export const SEARCH_VALUE='SEARCH_VALUE';
+export const SELECTED_ITEM='SELECTED_ITEM';
+export const EDIT_ITEM='EDIT_ITEM';

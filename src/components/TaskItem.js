@@ -21,8 +21,10 @@ class TaskItem extends Component {
         this.props.onDeleteItem(this.props.task.id);
     }
 
-    onSelectedItem = () => {
-        this.props.onSelectedItem(this.props.task);
+    onEditTask = () => {
+        // this.props.onSelectedItem(this.props.task.id);
+        this.props.onOpenForm()
+        this.props.onEditTask(this.props.task)
     }
 
     render() {
@@ -34,7 +36,7 @@ class TaskItem extends Component {
                     { this.showStatusElement() }
                 </td>
                 <td className="text-center">
-                    <button type="button" className="btn btn-warning" onClick={ this.onSelectedItem }>
+                    <button type="button" className="btn btn-warning" onClick={ this.onEditTask }>
                         <span className="fa fa-pencil mr-5"></span>Sửa
                     </button>
                     &nbsp;
@@ -49,7 +51,7 @@ class TaskItem extends Component {
 
 const mapStateToProps = (state)=>{
     return {
-
+        // task:state.task
     }
 }
 const mapDispatchToProps = (dispatch,props)=>{
@@ -59,6 +61,15 @@ const mapDispatchToProps = (dispatch,props)=>{
         },
         onDeleteItem: (id)=>{
             dispatch(actions.deleteItem(id))
+        },
+        onSelectedItem: (id)=>{
+            dispatch(actions.openSelectedItem(id))
+        },
+        onOpenForm : ()=>{
+            dispatch(actions.openForm())
+        },
+        onEditTask:(task)=>{
+            dispatch(actions.editTask(task))
         }
     }
 }

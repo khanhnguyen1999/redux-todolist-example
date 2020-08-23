@@ -41,7 +41,7 @@ class TaskForm extends Component {
             [name] : value
         });
     }
-
+    
     onHandleSubmit = (event) => {
         event.preventDefault();
         // this.props.onSave(this.state);
@@ -63,11 +63,13 @@ class TaskForm extends Component {
     }
 
     render() {
+        console.log("task: ",this.props.itemEditing.name)
+        if(!this.props.isDisplayForm) return '';
         return (
             <div className="panel panel-warning">
                 <div className="panel-heading">
                     <h3 className="panel-title">
-                        { !this.state.id ? 'Thêm Công Việc' : 'Cập Nhật Công Việc' }
+                        { !this.props.itemEditing.id ? 'Thêm Công Việc' : 'Cập Nhật Công Việc' }
                         <span
                             className="fa fa-times-circle text-right"
                             onClick={this.onExitForm}
@@ -82,14 +84,14 @@ class TaskForm extends Component {
                                 type="text"
                                 className="form-control"
                                 name="name"
-                                value={this.state.name}
+                                value={this.props.itemEditing.name}
                                 onChange={ this.onHandleChange }
                             />
                         </div>
                         <label>Trạng Thái :</label>
                         <select
                             className="form-control"
-                            value={this.state.status}
+                            value={this.props.itemEditing.status}
                             onChange={this.onHandleChange}
                             name="status"
                         >
@@ -113,7 +115,8 @@ class TaskForm extends Component {
 
 const mapStateToProps = (state)=>{
     return {
-
+        isDisplayForm:state.isDisplayForm,
+        itemEditing:state.itemEditing
     }
 }
 const mapDispatchToProps = (dispatch,props)=>{

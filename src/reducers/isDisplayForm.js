@@ -13,6 +13,9 @@ var myReducer = (state = initialState,action)=>{
         case types.CLOSE_FORM:
             state = false;
             return state;
+        case types.SELECTED_ITEM:
+            state = false;
+            return state;
         default: return state;
     }
 };
